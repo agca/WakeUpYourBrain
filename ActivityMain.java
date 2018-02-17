@@ -12,6 +12,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ActivityMain extends AppCompatActivity {
 
@@ -55,6 +56,8 @@ public class ActivityMain extends AppCompatActivity {
         btnCust.startAnimation(anim_cust);
         fab.startAnimation(anim_fab);
         title.startAnimation(anim_title);
+
+        Toast.makeText(this, "Tohle je toast", Toast.LENGTH_LONG).show();
     }
 
     @Override

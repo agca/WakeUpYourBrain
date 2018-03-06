@@ -33,7 +33,7 @@ public class ActivityMain extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show();
             }
         });
@@ -54,10 +54,12 @@ public class ActivityMain extends AppCompatActivity {
         btnEasy.startAnimation(anim_easy);
         btnHard.startAnimation(anim_hard);
         btnCust.startAnimation(anim_cust);
-        fab.startAnimation(anim_fab);
+//        fab.startAnimation(anim_fab);
         title.startAnimation(anim_title);
 
-        Toast.makeText(this, "Tohle je toast", Toast.LENGTH_LONG).show();
+        Equation equation = new Equation(true, false, false, false, 10, 20);
+//
+        Toast.makeText(this, equation.getEquationString() + equation.getCorrectResultString(), Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -84,6 +86,8 @@ public class ActivityMain extends AppCompatActivity {
 
     public void goEasy(View view) {
         btnEasy.startAnimation(anim_bounce);
+        Equation equation = new Equation(false, true, false, true, 10, 20);
+        Toast.makeText(this, equation.getEquationString() + equation.getCorrectResultString(), Toast.LENGTH_SHORT).show();
     }
 
     public void goHard(View view) {

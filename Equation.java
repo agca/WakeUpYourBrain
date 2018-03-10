@@ -24,10 +24,11 @@ public class Equation {
 
     //constructor + input prerequisities for the equation creation + creation
     //                      true          true           false         false        10              20
-    public Equation(boolean plus, boolean minus, boolean times, boolean div, int maxVariable, int maxResult) {
+    public Equation(boolean plus, boolean minus, boolean times, boolean div, int otherNumber, int maxNumber) {
         currentSign = generateSign(plus, minus, times, div);
-        generateVariables(maxVariable, maxResult);
-        generateResults();
+        generateVariables(otherNumber, maxNumber);
+        generateCorrectResult();
+        generateFakeResults(plus, minus, times, div);
     }
 
     public String getEquationString() {
@@ -63,7 +64,7 @@ public class Equation {
     }
 
     // generate three results according to used sign
-    private void generateResults() {
+    private void generateCorrectResult() {
         switch (currentSign) {
             case PLUS:
                 correctResult = variable1 + variable2;
@@ -127,6 +128,10 @@ public class Equation {
                 variable2 = 888;
                 break;
         }
+    }
+
+    void generateFakeResults(boolean plus, boolean minus, boolean times, boolean div) {
+
     }
 
 

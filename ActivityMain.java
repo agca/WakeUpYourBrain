@@ -25,6 +25,7 @@ public class ActivityMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        setContentView(new GraphView(this));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -54,12 +55,8 @@ public class ActivityMain extends AppCompatActivity {
         btnEasy.startAnimation(anim_easy);
         btnHard.startAnimation(anim_hard);
         btnCust.startAnimation(anim_cust);
-//        fab.startAnimation(anim_fab);
         title.startAnimation(anim_title);
 
-        Equation equation = new Equation(true, false, false, false, 10, 20);
-//
-        Toast.makeText(this, equation.getEquationString() + equation.getCorrectResultString(), Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -88,6 +85,7 @@ public class ActivityMain extends AppCompatActivity {
         btnEasy.startAnimation(anim_bounce);
         Equation equation = new Equation(false, true, false, true, 10, 20);
         Toast.makeText(this, equation.getEquationString() + equation.getCorrectResultString(), Toast.LENGTH_SHORT).show();
+
     }
 
     public void goHard(View view) {
